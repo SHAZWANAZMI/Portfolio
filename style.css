@@ -1,0 +1,293 @@
+/* style.css */
+
+body {
+    /* Pastikan ada fail background.jpg */
+    background-image: url("background.jpg");
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* === BAHAGIAN PRELOADER (BLOOMING ANIMATION) === */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Latar belakang hitam sepenuhnya */
+    z-index: 9999; /* Paling atas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* === BAHAGIAN HEADER === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00b7ff;
+}
+
+.contact-btn {
+    font-family: 'Orbitron', sans-serif;
+    background: #00b7ff;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* === BAHAGIAN HERO UTAMA === */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 60px;
+    gap: 80px;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+
+.hero-image-container {
+    max-width: 400px;
+    flex-shrink: 1;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
+    border-radius: 10px;
+}
+
+/* BOX INTRO */
+.intro-box {
+    background: radial-gradient(circle at center, hsla(219, 80%, 30%, 1), hsl(219, 60%, 15%));
+    padding: 40px 60px;
+    border-radius: 50% 20% / 10% 4.0%; /* Bentuk Liquid Futuristic */
+    max-width: 500px;
+    text-align: center;
+    box-shadow:
+        0 0 5px rgba(0, 183, 255, 0.5),
+        0 0 20px rgba(0, 183, 255, 0.7),
+        0 0 40px rgba(0, 183, 255, 0.3);
+}
+
+.intro-box h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.intro-box p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.btn-blue {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(90deg, #00b7ff, #0077ff);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-blue:hover {
+    background: linear-gradient(90deg, #006eff, #00b7ff);
+    transform: scale(1.05);
+}
+
+/* === BAHAGIAN QUOTE === */
+.quote-section {
+    background: transparent;
+    padding: 100px 10%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 38px;
+    line-height: 1.4;
+    font-weight: 900;
+    color: white;
+    position: relative;
+    z-index: 1;
+    transform: skewY(-0.5deg);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+
+/* KEYFRAMES untuk Pulse Glow */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 8px #00b7ff, 0 0 15px #00b7ff, 0 0 25px #00b7ff;
+    }
+    100% {
+        text-shadow: 0 0 15px #FF00FF, 0 0 30px #FF00FF, 0 0 50px #FF00FF;
+    }
+}
+
+.quote-section span {
+    color: #FF00FF;
+    text-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF;
+}
+
+/* ------------------------------------------------ */
+/* 🎧 KONTENA APUNG UTAMA (ICON & MINI PLAYER) */
+/* ------------------------------------------------ */
+
+.music-floating-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+/* Ikon Spotify */
+.spotify-icon-toggle {
+    display: block;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1002;
+}
+
+.spotify-icon-toggle:hover {
+    transform: scale(1.1);
+}
+
+.spotify-icon {
+    font-size: 3em;
+    color: #1DB954;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+}
+
+/* Mini Player Popup */
+.mini-player-popup {
+    width: 350px;
+    height: 380px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: move; /* Cursor menunjukkan boleh drag */
+    z-index: 1001;
+}
+
+.mini-player-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.mini-player-popup iframe {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    border-radius: 12px;
+    pointer-events: auto; /* Pastikan butang dalam iframe boleh klik */
+}
+
+/* ------------------------------------ */
+/* RESPONSIVE DESIGN */
+/* ------------------------------------ */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 20px;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    .hero-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 5%;
+        min-height: auto;
+    }
+    .quote-section {
+        padding: 60px 5%;
+    }
+    .quote-section h1 {
+        font-size: 28px;
+    }
+    /* Posisi Ikon pada skrin kecil */
+    .music-floating-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    .spotify-icon {
+        font-size: 2.5em;
+    }
+    .mini-player-popup {
+        width: 280px;
+        height: 250px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
